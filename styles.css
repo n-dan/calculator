@@ -58,12 +58,12 @@ body {
   word-wrap: break-word;
   word-break: break-all;
 }
-.output .entries {
+.output .previous-operand {
   color: rgba(255, 255, 255, 0.75);
   font-size: 1.5rem;
 }
 
-.output .result {
+.output .current-operand {
   color: rgba(255, 255, 255, 0.75);
   font-size: 2.5rem;
 }
