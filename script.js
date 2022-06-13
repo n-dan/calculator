@@ -16,7 +16,7 @@ class Calculator {
   }
 
   appendNumber(number) {
-    if (number === "." && this.currentOperand.includes(".")) return;
+    if (number === "." && this.currentOperand.toString().includes(".")) return;
     this.currentOperand = this.currentOperand.toString() + number.toString();
   }
 
@@ -125,5 +125,16 @@ deleteButton.addEventListener("click", () => {
 
 clearButton.addEventListener("click", () => {
   calculator.clear();
+  calculator.updateDisplay();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key >= 0 && e.key <= 9) calculator.appendNumber(e.key);
+  if (e.key === ".") calculator.appendNumber(e.key);
+  if (e.key === "=" || e.code === "Enter") calculator.compute();
+  if (e.key === "Backspace") calculator.delete();
+  if (e.key === "Escape") calculator.clear();
+  if (e.key === "/" || e.key === "*" || e.key === "+" || e.key === "-")
+    calculator.chooseOperation(e.key);
   calculator.updateDisplay();
 });
