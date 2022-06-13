@@ -27,12 +27,20 @@ body {
   }
 }
 
+.calculator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 .calculator-grid {
   display: grid;
   gap: 10px;
-  justify-content: center;
-  align-content: center;
-  min-height: 100vh;
+  border: 2px solid black;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: rgb(200, 200, 200);
   grid-template-columns: repeat(4, 100px);
   grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
